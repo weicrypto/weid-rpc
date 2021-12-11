@@ -1,16 +1,13 @@
-# dashd-rpc
+# weid-rpc
 
-[![Build Status](https://github.com/dashevo/dashd-rpc/actions/workflows/test.yml/badge.svg)](https://github.com/dashevo/dashd-rpc/actions/workflows/test.yml)
-[![NPM Package](https://img.shields.io/npm/v/@dashevo/dashd-rpc.svg)](https://www.npmjs.org/package/@dashevo/dashd-rpc)
-
-Dash Client Library to connect to Dash Core (dashd) via RPC
+Wei Client Library to connect to Wei Core (weid) via RPC
 
 ## Install
 
-dashd-rpc runs on [node](http://nodejs.org/), and can be installed via [npm](https://npmjs.org/):
+weid-rpc runs on [node](http://nodejs.org/), and can be installed via [npm](https://npmjs.org/):
 
 ```bash
-npm install @dashevo/dashd-rpc
+npm install @weicrypto/weid-rpc
 ```
 
 ## Usage
@@ -27,8 +24,8 @@ Config parameters :
 
 Promise vs callback based
 
-  - `require('@dashevo/dashd-rpc/promise')` to have promises returned
-  - `require('@dashevo/dashd-rpc')` to have callback functions returned
+  - `require('@weicrypto/weid-rpc/promise')` to have promises returned
+  - `require('@weicrypto/weid-rpc')` to have callback functions returned
 	
 ### Examples
 
@@ -37,7 +34,7 @@ Config:
 ```javascript
 var config = {
     protocol: 'http',
-    user: 'dash',
+    user: 'wei',
     pass: 'local321',
     host: '127.0.0.1',
     port: 19998
@@ -47,7 +44,7 @@ var config = {
 Promise based:
 
 ```javascript
-var RpcClient = require('@dashevo/dashd-rpc/promise');
+var RpcClient = require('@weicrypto/weid-rpc/promise');
 var rpc = new RpcClient(config);
 
 rpc.getRawMemPool()
@@ -68,8 +65,8 @@ Callback based (legacy):
 
 ```javascript
 var run = function() {
-  var bitcore = require('@dashevo/dashcore-lib');
-  var RpcClient = require('@dashevo/dashd-rpc');
+  var bitcore = require('@weicrypto/weicore-lib');
+  var RpcClient = require('@weicrypto/weid-rpc');
   var rpc = new RpcClient(config);
 
   var txids = [];
@@ -115,10 +112,10 @@ var run = function() {
 You can dynamically access to the help of each method by doing
 
 ```
-const RpcClient = require('@dashevo/dashd-rpc');
+const RpcClient = require('@weicrypto/weid-rpc');
 var client = new RPCclient({
     protocol:'http',
-    user: 'dash',
+    user: 'wei',
     pass: 'local321', 
     host: '127.0.0.1', 
     port: 19998
@@ -135,10 +132,6 @@ client.help(cb);
 client.help('getinfo',cb);
 ```
 
-## Contributing
-
-Feel free to dive in! [Open an issue](https://github.com/dashevo/dash-std-template/issues/new) or submit PRs.
-
 ## License
 
-[MIT](LICENSE) &copy; Dash Core Group, Inc.
+[MIT](LICENSE) &copy; Wei Core Group, Inc.
